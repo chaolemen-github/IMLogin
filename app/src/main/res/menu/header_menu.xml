@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_zhihu" android:title="知乎"/>
+    <item android:id="@+id/menu_wechat" android:title="微信"/>
+    <item android:id="@+id/menu_group" android:title="群聊"/>
+    <item android:id="@+id/menu_map" android:title="地图"/>
+</menu>
