@@ -1,6 +1,7 @@
 package com.example.imlogin.api;
 
 import com.example.imlogin.bean.DailyBean;
+import com.example.imlogin.bean.DailyNewsDetailsBean;
 import com.example.imlogin.bean.HotBean;
 import com.example.imlogin.bean.SpecialBean;
 
@@ -10,6 +11,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiService {
     String baseUrl = "http://47.110.151.50/p6/";
@@ -62,4 +64,8 @@ public interface ApiService {
 
     @GET("api/4/news/hot")
     Observable<HotBean> getHotData();
+
+     @GET("api/4/news/{id}")
+    Flowable<DailyNewsDetailsBean> getDailyNewsDetailsData(@Path("id") int id);
+
 }

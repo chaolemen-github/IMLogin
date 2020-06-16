@@ -16,11 +16,14 @@ import java.net.UnknownHostException;
 import io.reactivex.subscribers.ResourceSubscriber;
 import retrofit2.HttpException;
 
-public class BaseObserver<T> extends ResourceSubscriber<T> {
+public abstract class BaseObserver<T> extends ResourceSubscriber<T> {
     @Override
     public void onNext(T t) {
-
+        onSuccess(t);
     }
+
+    protected abstract void onSuccess(T t);
+
 
     @Override
     public void onError(Throwable e) {

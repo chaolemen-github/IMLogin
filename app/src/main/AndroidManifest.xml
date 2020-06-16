@@ -28,7 +28,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activity.CalenderActivity"></activity>
+        <activity android:name=".ui.activity.DailyNewsDetailsActivity"></activity>
+        <activity android:name=".ui.activity.CalenderActivity" />
         <activity android:name=".ui.activity.ZhihuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +40,7 @@
         <activity android:name=".ui.activity.MapActivity" />
         <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.RegisterActivity" />
-        <activity android:name=".ui.activity.MainActivity"></activity>
+        <activity android:name=".ui.activity.MainActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"

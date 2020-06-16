@@ -17,6 +17,7 @@ import com.example.imlogin.adapter.DailyAdapter;
 import com.example.imlogin.api.ApiService;
 import com.example.imlogin.bean.DailyBean;
 import com.example.imlogin.ui.activity.CalenderActivity;
+import com.example.imlogin.ui.activity.DailyNewsDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -116,7 +117,12 @@ public class DailyNewsFragment extends Fragment {
         dailyAdapter.setOnCilckListenerDaily(new DailyAdapter.OnCilckListenerDaily() {
             @Override
             public void onClick(int post) {
-                
+                DailyBean.StoriesBean storiesBean = list.get(post);
+                Intent intent = new Intent(getActivity(), DailyNewsDetailsActivity.class);
+                intent.putExtra("title",storiesBean.getTitle());
+                intent.putExtra("img",storiesBean.getImages().get(0));
+                intent.putExtra("id",storiesBean.getId());
+                startActivity(intent);
             }
         });
     }
