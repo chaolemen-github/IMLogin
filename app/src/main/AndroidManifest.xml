@@ -28,16 +28,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activity.MapActivity">
+        <activity android:name=".ui.activity.CalenderActivity"></activity>
+        <activity android:name=".ui.activity.ZhihuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.LoginActivity">
-
-        </activity>
+        <activity android:name=".ui.activity.MapActivity" />
+        <activity android:name=".ui.activity.LoginActivity" />
         <activity android:name=".ui.activity.RegisterActivity" />
         <activity android:name=".ui.activity.MainActivity"></activity>
 
@@ -65,13 +65,10 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
-        </receiver>
-        <!-- map start -->
+        </receiver> <!-- map start -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="HfpKjzyqBVjMEXBkIekrOEz2ehBA8a5x" />
-        <!--map end-->
-
     </application>
 
 </manifest>

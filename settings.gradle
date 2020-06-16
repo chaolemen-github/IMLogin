@@ -1,1 +1,2 @@
-include ':app', ':exam612'
+include ':app'
+//include ':exam612'
