@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.close, R.string.open);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,
+                drawerLayout, toolbar, R.string.close, R.string.open);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
@@ -101,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_map:
                         startActivity(new Intent(MainActivity.this, MapActivity.class));
+                        break;
+                    case R.id.menu_navi:
+                        startActivity(new Intent(MainActivity.this,NaviActivity.class));
                         break;
 
                 }

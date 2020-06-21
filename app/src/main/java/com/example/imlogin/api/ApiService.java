@@ -3,6 +3,7 @@ package com.example.imlogin.api;
 import com.example.imlogin.bean.DailyBean;
 import com.example.imlogin.bean.DailyNewsDetailsBean;
 import com.example.imlogin.bean.HotBean;
+import com.example.imlogin.bean.NaviBean;
 import com.example.imlogin.bean.SpecialBean;
 
 import io.reactivex.Flowable;
@@ -16,6 +17,7 @@ import retrofit2.http.Path;
 public interface ApiService {
     String baseUrl = "http://47.110.151.50/p6/";
     String baseZhiUrl = "http://news-at.zhihu.com/";
+    String naviUrl = "https://www.wanandroid.com/";
 
     /**
      * 注册,
@@ -67,5 +69,12 @@ public interface ApiService {
 
      @GET("api/4/news/{id}")
     Flowable<DailyNewsDetailsBean> getDailyNewsDetailsData(@Path("id") int id);
+
+    /**
+     * 导航
+     * @return
+     */
+    @GET("navi/json")
+    Flowable<NaviBean> getNaviData();
 
 }

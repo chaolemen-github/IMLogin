@@ -11,7 +11,10 @@ import android.widget.Button;
 
 import com.example.imlogin.R;
 import com.example.imlogin.base.BaseFragment;
+import com.example.imlogin.ui.activity.ITInfoActivity;
 import com.example.imlogin.ui.activity.ZhihuActivity;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +29,9 @@ public class DiscoveryFragment extends BaseFragment {
 
     @BindView(R.id.btn_zhihu)
     Button btnZhihu;
+
+    @BindView(R.id.btn_it)
+    Button btnIt;
     Unbinder unbinder;
 
     public DiscoveryFragment() {
@@ -45,8 +51,25 @@ public class DiscoveryFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    @OnClick(R.id.btn_zhihu)
-    public void onViewClicked() {
-        startActivity(new Intent(getActivity(), ZhihuActivity.class));
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+//        EventBus.getDefault().postSticky("");
+        return rootView;
+    }
+
+    @OnClick({R.id.btn_zhihu, R.id.btn_it})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_zhihu:
+                startActivity(new Intent(getActivity(), ZhihuActivity.class));
+                break;
+            case R.id.btn_it:
+                startActivity(new Intent(getActivity(), ITInfoActivity.class));
+                break;
+        }
     }
 }

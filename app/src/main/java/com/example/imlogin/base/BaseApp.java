@@ -13,6 +13,8 @@ import com.hyphenate.chat.EMOptions;
 import java.util.Iterator;
 import java.util.List;
 
+import cn.jpush.android.api.JPushInterface;
+
 public class BaseApp extends Application {
 
     private static BaseApp app;
@@ -28,7 +30,11 @@ public class BaseApp extends Application {
 
         initIm();
         initMap();
+        initJPush();
+    }
 
+    private void initJPush() {
+        JPushInterface.init(this);
     }
 
     private void initMap() {
@@ -54,7 +60,7 @@ public class BaseApp extends Application {
         // 为了防止环信SDK被初始化2次，加此判断会保证SDK被初始化1次
         // 默认的APP会在以包名为默认的process name下运行，如果查到的process name不是APP的process name就立即返回
 
-        if (processAppName == null ||!processAppName.equalsIgnoreCase(this.getPackageName())) {
+        if (processAppName == null || !processAppName.equalsIgnoreCase(this.getPackageName())) {
             Log.e("TAG", "enter the service process!");
 
             // 则此application::onCreate 是被service 调用的，直接返回
